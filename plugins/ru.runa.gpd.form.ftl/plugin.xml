@@ -263,6 +263,32 @@
          </param>
       </component>
       <component
+              enabled="true"
+              id="DisplayDateVariable"
+              imageProvider="ru.runa.gpd.formeditor.ftl.image.VariableComponentImageProvider"
+              name="%Method.DisplayDateVariable"
+              order="-97">
+         <param
+                 name="%Param.Variable"
+                 type="varfinder"
+                 variableTypeFilter="java.lang.Object"
+                 variableAccess="READ">
+         </param>
+         <param
+                 name="%Param.DisplayFormat"
+                 type="combo"
+                 variableAccess="NONE">
+            <paramValue
+                    name="%Format.Variable.Component"
+                    value="true">
+            </paramValue>
+            <paramValue
+                    name="%Format.Variable.Output"
+                    value="false">
+            </paramValue>
+         </param>
+      </component>
+      <component
             enabled="false"
             id="ChooseActor"
             name="%Method.ChooseActor">
