@@ -237,11 +237,24 @@
          </param>
       </component>
       <component
+              enabled="true"
+              id="InputDateVariable"
+              imageProvider="ru.runa.gpd.formeditor.ftl.image.VariableComponentImageProvider"
+              name="Ввод переменной с датой"
+              order="-98">
+         <param
+                 name="%Param.Variable"
+                 type="varfinder"
+                 variableAccess="WRITE"
+                 variableTypeFilter="java.lang.Object">
+         </param>
+      </component>
+      <component
             enabled="true"
             id="DisplayVariable"
             imageProvider="ru.runa.gpd.formeditor.ftl.image.VariableComponentImageProvider"
             name="%Method.DisplayVariable"
-            order="-98">
+            order="-97">
          <param
                name="%Param.Variable"
                type="varfinder"
@@ -267,7 +280,7 @@
               id="DisplayDateVariable"
               imageProvider="ru.runa.gpd.formeditor.ftl.image.VariableComponentImageProvider"
               name="Вывести переменную с датой"
-              order="-97">
+              order="-96">
          <param
                  name="%Param.Variable"
                  type="varfinder"
