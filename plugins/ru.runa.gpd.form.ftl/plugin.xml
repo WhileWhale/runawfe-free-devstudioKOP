@@ -266,7 +266,7 @@
               enabled="true"
               id="DisplayDateVariable"
               imageProvider="ru.runa.gpd.formeditor.ftl.image.VariableComponentImageProvider"
-              name="%Method.DisplayDateVariable"
+              name="Вывести переменную с датой"
               order="-97">
          <param
                  name="%Param.Variable"

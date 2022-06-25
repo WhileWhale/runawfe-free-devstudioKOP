@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import ru.runa.wfe.var.dto.WfVariable;
 import freemarker.template.TemplateModelException;
 
-public class DisplayVariableTag extends FreemarkerTagGpdWrap {
+public class DisplayDateVariableTag extends FreemarkerTagGpdWrap {
     private static final long serialVersionUID = 1L;
 
     @Override
