@@ -18,15 +18,16 @@ public class InputDateVariableTag extends FreemarkerTagGpdWrap{
         String variableName = getParameterAs(String.class, 0);
         WfVariable variable = variableProvider.getVariableNotNull(variableName);
         String formatClassName = variable.getDefinition().getFormatClassName();
-        LocalDate date = LocalDate.now();
-        Object value = variableProvider.getValue(variableName) + date;
+        Object value = variableProvider.getValue(variableName);
         String html;
+        LocalDate date = LocalDate.now();
+        String valueAndDate = (String)value + date;
         if (ListFormat.class.getName().equals(formatClassName)) {
             EditListTag tag = new EditListTag();
             //tag.initChained(this);
             html = tag.renderRequest();
         } else {
-            html = ViewUtil.getComponentInput(user, variableName, formatClassName, value);
+            html = ViewUtil.getComponentInput(user, variableName, formatClassName, valueAndDate);
         }
         if (html.length() == 0) {
             log.warn("No HTML built for " + variable);
