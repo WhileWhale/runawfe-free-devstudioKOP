@@ -22,13 +22,4 @@ public class CatchEventNode extends AbstractEventNode implements IReceiveMessage
         }
         super.validateOnEmptyRules(errors);
     }
-    
-    @Override
-    protected boolean allowArrivingTransition(Node source, List<Transition> transitions) {
-        if (getParent() instanceof IBoundaryEvent) {
-            // boundary event
-            return false;
-        }
-        return super.allowArrivingTransition(source, transitions);
-    }
 }
