@@ -4,7 +4,9 @@ import java.util.List;
 
 import ru.runa.gpd.lang.ValidationError;
 import ru.runa.gpd.lang.model.IReceiveMessageNode;
+import ru.runa.gpd.lang.model.Node;
 import ru.runa.gpd.lang.model.Timer;
+import ru.runa.gpd.lang.model.Transition;
 
 public class CatchEventNode extends AbstractEventNode implements IReceiveMessageNode, IBoundaryEvent, IBoundaryEventContainer {
 
@@ -19,5 +21,14 @@ public class CatchEventNode extends AbstractEventNode implements IReceiveMessage
             return;
         }
         super.validateOnEmptyRules(errors);
+    }
+    
+    @Override
+    protected boolean allowArrivingTransition(Node source, List<Transition> transitions) {
+        if (getParent() instanceof IBoundaryEvent) {
+            // boundary event
+            return false;
+        }
+        return super.allowArrivingTransition(source, transitions);
     }
 }
